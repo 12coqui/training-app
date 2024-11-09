@@ -7,8 +7,7 @@ async function getAllWorkouts(req, res) {
 		if (!workouts) {
 			return res.status(404).json({ message: 'No workouts found' });
 		}
-		const data = workouts.json();
-		res.status(200).json(data);
+		res.status(200).json(workouts);
 	} catch (err) {
 		res.json(err.message);
 	}
@@ -24,8 +23,7 @@ async function getWorkout(req, res) {
 		if (!workout) {
 			return res.status(404).json({ message: 'Workout not found' });
 		}
-		const data = workout.json();
-		res.status(200).json(data);
+		res.status(200).json(workout);
 	} catch (err) {
 		res.json(err.message);
 	}
@@ -34,8 +32,7 @@ async function getWorkout(req, res) {
 async function createWorkout(req, res) {
 	try {
 		const newWorkout = await Training.create(req.body);
-		const data = newWorkout.json();
-		res.status(200).json(data);
+		res.status(200).json(newWorkout);
 	} catch (err) {
 		res.json(err.message);
 	}
@@ -51,8 +48,7 @@ async function deleteWorkout(req, res) {
 		if (!workout) {
 			return res.status(404).json({ message: 'Workout not found' });
 		}
-		const data = workout.json();
-		res.status(200).json(data);
+		res.status(200).json(workout);
 	} catch (err) {
 		res.json(err.message);
 	}

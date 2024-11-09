@@ -6,7 +6,7 @@ const trainingSchema = new Schema(
 	{
 		day: {
 			type: Date,
-			default: Date.UTC,
+			default: Date.now,
 		},
 		exercises: [
 			{
@@ -20,10 +20,6 @@ const trainingSchema = new Schema(
 					trim: true,
 					required: 'Enter the name of exercise',
 				},
-				duration: {
-					type: Number,
-					required: 'Enter the duration of exercise in minutes',
-				},
 				weight: {
 					type: String,
 					required: true,
@@ -35,6 +31,10 @@ const trainingSchema = new Schema(
 				sets: {
 					type: Number,
 					required: true,
+				},
+				duration: {
+					type: Number,
+					required: 'Enter the duration of exercise in minutes',
 				},
 			},
 		],

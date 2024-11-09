@@ -7,23 +7,20 @@ const {
 	deleteWorkout,
 	updateWorkout,
 } = require('../Controllers/trainingController');
-router.get('/', (req, res) => {
-	res.send('Hello World');
-});
 
 // Get all workouts
-router.get('/api/workout/', getAllWorkouts);
+router.get('/', getAllWorkouts);
 
 // Get a specific workout
-router.get('/api/workout/:id', getWorkout);
+router.get('/:id', getWorkout);
 
 // Create a new workout
-router.post('/api/workout', createWorkout);
+router.post('/', createWorkout);
 
 // Delete a workout
-router.delete('/api/workout/:id', deleteWorkout);
+router.delete('/:id', deleteWorkout);
 
 // Replace a workout
-router.put('/api/workout/:id', updateWorkout);
+router.put('/:id', updateWorkout);
 
 module.exports = router;
